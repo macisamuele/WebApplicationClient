@@ -5,6 +5,13 @@ This Abstract Client allows an effective simplification of the work related with
 
 The client provides an Asynchronous pattern to avoid to wrap it inside android.os.AsyncTask, android.content.Loader, java.lang.Thread or similar structures.
 
+### Usage
+The best way to use this Client is to install it on your local Maven Repository.
+In order to do that you should run `mvn install` in the project WebApplicationClient directory.
+An other alternative is to download the jar file inside the WebApplicationClient directory and include it as external library in your application.
+
+**TODO** soon will be available a public maven repository in order to provide directly a maven and gradle dependency
+
 ### Client Definition
 For the definition of a "real" client it is suggested to define an extension of the WebApplicationClient class that defines the real client parameter.
 
