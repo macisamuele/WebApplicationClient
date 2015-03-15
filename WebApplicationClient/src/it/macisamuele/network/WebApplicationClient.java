@@ -1,7 +1,7 @@
 package it.macisamuele.network;
 
 /**
- * Copyright 2015 Tap Event Development Team
+ * Copyright 2015 Samuele Maci (macisamuele@gmail.com)
  *
  * Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except
  * in compliance with the License. You may obtain a copy of the License at
