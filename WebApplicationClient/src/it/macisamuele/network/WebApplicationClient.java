@@ -13,7 +13,7 @@ package it.macisamuele.network;
  * or implied. See the License for the specific language governing permissions and limitations under
  * the License.
  */
-
+ 
 import android.content.Context;
 import android.util.Log;
 
@@ -95,7 +95,7 @@ public abstract class WebApplicationClient {
      * @return the base URL of the Web-Application:
      * scheme://[user:password@]domain[:port]
      */
-    public abstract String getBaseUrl();
+    protected abstract String getBaseUrl();
 
     public boolean acceptAnyCertificate() {
         try {
@@ -301,10 +301,16 @@ public abstract class WebApplicationClient {
      */
     private String getUrl(Request request) {
         String api = request.getPath();
+        String baseUrl = getBaseUrl();
         if (api.charAt(0) == '/') {
             api = api.substring(1);
             Log.v(TAG,
                     "the API of the request should not start with '/' (automatically removed)");
+        }
+        if (baseUrl.charAt(baseUrl.length()-1) == '/') {
+            baseUrl= baseUrl.substring(0, baseUrl.length()-1);
+            Log.v(TAG,
+                    "the base url of the web application should not end with '/' (automatically removed)");
         }
         return getBaseUrl() + "/" + api;
     }
