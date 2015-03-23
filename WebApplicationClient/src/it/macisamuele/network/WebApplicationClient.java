@@ -308,11 +308,11 @@ public abstract class WebApplicationClient {
                     "the API of the request should not start with '/' (automatically removed)");
         }
         if (baseUrl.charAt(baseUrl.length()-1) == '/') {
-            baseUrl= baseUrl.substring(0, baseUrl.length()-1);
+            baseUrl = baseUrl.substring(0, baseUrl.length()-1);
             Log.v(TAG,
                     "the base url of the web application should not end with '/' (automatically removed)");
         }
-        return getBaseUrl() + "/" + api;
+        return baseUrl + "/" + api;
     }
 
     /**
